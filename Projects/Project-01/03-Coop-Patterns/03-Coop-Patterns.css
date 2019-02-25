@@ -1,43 +1,45 @@
 * {
 	box-sizing: border-box;
 }
+.main{
+	width: 80%;
+	margin: 100px auto;
+	padding: 20px;
+}
 
 body{
 
 	font-family: sans-serif;
 	line-height: 1.5em;
 	background:white;
-	font-size: 1em;
 }
 
 h1{
-	margin: 20px;
-	font-size: 3em;
+	margin-top: 10px;
+	padding:20px;
+	font-size: 4em;
 	font-style: bold;
+	text-align: center;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #4d00ff;
 }
 
-.main{
-	width: 80%;
-	margin: 100px auto;
-	padding: 50px;
+h2{
+	margin:auto;
+	padding:20px;
+	font-size: 2em;
+	text-align: center;	
 }
 
-
-ul{
-	list-style: none;
-}
- 
-ul li{
-	color: #dadada;
-}
-
-a:link{
+a{
 	color: #0000ff;
 	text-decoration: none;
 }
 
 a:hover{
-	text-decoration: underline;
+	color:red;
+	text-decoration: none;
 }
 
 

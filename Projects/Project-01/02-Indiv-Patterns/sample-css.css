@@ -10,99 +10,99 @@ body{
 
 .position-fixed-1{
 	position:absolute;
-	top:20px;
+	top:0px;
 	left:20px;
 }
 
 .position-fixed-2{
 	position:fixed;
-	top:120px;
+	top:100px;
 	left:-80px;
 	z-index:1;
 }
 
 .position-fixed-3{
 	position:absolute;
-	top:220px;
+	top:200px;
 	left:20px;
 	z-index:2;
 }
 
 .position-fixed-4{
 	position:fixed;
-	top:320px;
+	top:300px;
 	left:120px;
 	z-index:3;
 }
 .position-fixed-5{
 	position:absolute;
-	top:420px;
+	top:400px;
 	left:220px;
 	z-index:4;
 }
 .position-fixed-6{
 	position:fixed;
-	top:520px;
+	top:500px;
 	left:-80px;
 	z-index:5;
 }
 
 .position-fixed-7{
 	position:absolute;
-	top:620px;
+	top:600px;
 	left:20px;
 	z-index:6;
 }
 
 .position-fixed-8{
 	position:fixed;
-	top:720px;
+	top:700px;
 	left:120px;
 	z-index:7;
 }
 
 .position-fixed-9{
 	position:absolute;
-	top:820px;
+	top:800px;
 	left:220px;
 	z-index:8;
 }
 
 .position-fixed-10{
 	position:fixed;
-	top:920px;
+	top:900px;
 	left:20px;
 	z-index:9;
 }
 
 .position-fixed-11{
 	position:absolute;
-	top:1020px;
+	top:1000px;
 	left:20px;
 	z-index:10;
 }
 
 .position-fixed-12{
 	position:absolute;
-	top:1220px;
+	top:1200px;
 	left:220px;
 	z-index:11;
 }
 .position-fixed-13{
 	position:absolute;
-	top:1420px;
+	top:1400px;
 	left:20px;
 	z-index:12;
 }
 .position-fixed-14{
 	position:absolute;
-	top:1620px;
+	top:1600px;
 	left:220px;
 	z-index:13;
 }
 .position-fixed-15{
 	position:absolute;
-	top:1820px;
+	top:1800px;
 	left:20px;
 	bottom: -100px;
 	z-index:14;

@@ -1,0 +1,85 @@
+body{
+	background-color: #ffffff;
+}
+
+#square1{
+	position: fixed;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.yellow{
+	width: 70px;
+    height: 70px;
+    background-color: #ffc408;
+    margin: 70px;
+    display: inline-block;
+}
+#square2{
+	position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.blue:hover{
+  width: 20px;
+  height: 20px;
+}
+.blue {
+    background-color: #99b3c8;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0px;
+    margin-top: 8px;
+    margin-left: 0px;
+    margin-right: 5px;
+    transition: width 2s, height 2s, cubic-bezier(0, 0.76, 0.53, 1.21);
+    transition-property: width, height, all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: -0.5s;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: -0.5s;
+}
+#square3{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    mix-blend-mode: color-burn;
+}
+.yellow1{
+    width: 70px;
+    height: 70px;
+    background-color: #ffc408;
+    margin-top: 100px;
+    margin-left: 16px;
+    margin-right: 56px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+#square4{
+    left: -49px;
+    top: -17px;
+    margin: 3px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    mix-blend-mode: multiply;
+}
+.pink{
+    width: 70px;
+    height: 70px;
+    background-color: pink;
+    margin-top: 100px;
+    margin-left: 16px;
+    margin-right: 56px;
+    margin-bottom: 0px;
+    display: inline-block;
+}

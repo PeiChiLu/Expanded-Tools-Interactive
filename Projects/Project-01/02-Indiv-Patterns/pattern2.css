@@ -1,0 +1,118 @@
+body{
+	background-color: #292c53;
+	width: 1000px;
+    height: 1500px;
+}
+#triangle{
+	position: fixed;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tri1{
+	left:45px;
+	top: 0px;
+}
+.tr1{
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid #e8ca31;
+    border-left: 100px solid transparent;
+    margin:60px;
+    display: flex;
+}
+#triangle2{
+	position: fixed;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tr2{
+	width: 0;
+    height: 0;
+    border-bottom: 100px solid transparent;
+    border-left: 100px solid #e8ca31;
+    margin:60px;
+    mix-blend-mode: screen;
+    margin-left: 100px;
+    margin-top: 160px;
+    margin-bottom: -40px;
+    margin-right: 0px;
+    display: inline-block;
+}
+.tri2{
+	left:61px;
+	top: 0px;
+}
+
+#stripe{
+	position: inherit;
+    justify-content: inherit;
+    left: -10px;
+}
+
+.white{
+	width: 2000px;
+    height: 1px;
+    background-color: #ffffff;
+    padding: 2px;
+    margin: 7px;
+    display: inline-block;
+    mix-blend-mode: difference;
+}
+#container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.position-fixed {
+    position: fixed;
+    top: 0px;
+    left: 45px;
+    z-index:4;
+}
+.circle-transparent{
+	width: 25px;
+	height: 25px;
+	background-color: #77428d;
+	border-radius: 50%;
+	display: inline-block;
+	margin:67px;
+	transition:transform .8s ease-in-out;
+	transition-delay: -0.1s;
+}
+.circle-transparent:hover{
+	opacity: 0;
+	transform: scale(10,10);
+}
+#container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.position-fixed2 {
+    position: fixed;
+    top: 45px;
+    left: 45px;
+    z-index:4;
+}
+.circle-transparent2{
+	width: 25px;
+	height: 25px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	margin:100px;
+	display: inline-block;
+	transition:transform .8s ease-in-out;
+	transition-delay: -0.1s;
+}
+.circle-transparent2:hover{
+	opacity: 0;
+	transform: scale(10,10);
+	mix-blend-mode: multiply;
+}
