@@ -1,7 +1,29 @@
 body{
 	background-color: #ffffff;
+	mix-blend-mode: multiply;
+    animation: color 5s infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 4s ease-out;
+    z-index:-1;
 }
-
+body:hover{
+	cursor: pointer;
+}
+@keyframes color{
+  0%{
+     background-color:#f1d85d;
+   }
+  50%{
+     background-color:#c3c8ce;
+  }
+  0%{
+     background-color:#ab222c;
+  }
+}
 #stripe{
 	position: inherit;
     justify-content: inherit;
@@ -53,11 +75,15 @@ body{
     margin-bottom: 30px;
     margin-left: 35px;
     mix-blend-mode: luminosity;
+    transition: 2s ease-out;
+}
+.triangle-up:hover{
+	transform:rotate3d(180deg);
 }
 #circle{
 	position: fixed;
     top: 0px;
-    left: -50px;
+    left: 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -68,34 +94,19 @@ body{
 	height: 120px;
 	background-color: #c3c8ce;
 	border-radius: 50%;
-	margin:100px;
-	display: inline-block;
+	margin:30px;
+	display: inline-grid;
 	margin-top: 120px;
     margin-right: 76px;
     margin-bottom: -37px;
-    margin-left: 35px;
-    transform: scale(0.9);
-    animation: color 5s infinite;
-    animation-timing-function: ease-out;
-    animation-direction: alternate;
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 2s ease-out;
-    -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
+    margin-left: 20px;
+    transition-delay: 0s;
+    transition: 1s ease-in-out;
 }
-@keyframes color{
-  0%{
-     background-color:lime; opacity:0;
-   }
-  50%{
-     background-color:#c3c8ce;
-  }
-  100%{
-     background-color:#ff00a6; opacity:50%;
-  }
-}
+
 .cr:hover{
-  background-color:#ff00a6 ;
-  cursor: pointer;
-  width: 70px;
+    background-color: #ffffff
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
 }
