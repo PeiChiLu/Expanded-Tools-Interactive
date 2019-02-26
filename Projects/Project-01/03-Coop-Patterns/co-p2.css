@@ -6,7 +6,7 @@ body{
 
 	font-family: sans-serif;
 	line-height: 1.5em;
-	background:white;
+	background:#ff00a6;
 	font-size: 1em;
 }
 
@@ -86,15 +86,34 @@ a:hover{
 		flex-direction: row;
     }
 
-/*CSS for Pattern 2*/
-	.triangle-topleft {
-	      width: 0;
-	      height: 0;
-	      border-top: 80px dotted #0000ffb3;
-	      border-right: 80px dotted #ff9900c2;
-        margin: 10px;
-	    }
-	  
+/*CSS for Pattern 2*/  
+  .triangle-topleft {
+	 width: 0;
+	 height: 0;
+	 border-top: 80px dotted #0000ffb3;
+	 border-right: 80px dotted #ff00a6;
+   margin: 10px;
+   animation: 2s linear infinite rotate;
+   animation-duration: 1s ease-in-out;
+   position: relative;
+   top: -45px;
+	}
+
+  @keyframes rotate {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+  }    
+	.triangle-topleft:hover{
+   animation: 2s linear infinite rotate;
+   animation-duration: 1s ease-in-out;
+   position: relative;
+   top: -45px;
+   transform: rotate(-360deg);
+  }  
 	.row-pattern2 {
 		display: flex;
 		flex-direction: row;
