@@ -45,12 +45,12 @@ body{
     transition-delay: -0.5s;
 }
 #square3{
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    mix-blend-mode: color-burn;
+    mix-blend-mode: color-dodge;
 }
 .yellow1{
     width: 70px;
@@ -61,6 +61,9 @@ body{
     margin-right: 56px;
     margin-bottom: 0px;
     display: inline-block;
+}
+.yellow:hover{
+    margin:200px;
 }
 #square4{
     left: -49px;
