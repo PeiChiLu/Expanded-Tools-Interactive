@@ -71,7 +71,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    mix-blend-mode: multiply;
+    mix-blend-mode: color-dodge;
 }
 .pink{
     width: 70px;
