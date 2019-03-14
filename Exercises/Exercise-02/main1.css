@@ -111,6 +111,9 @@ body {
     left: 437px;
     z-index: 4;
     border-radius: 50%;
+    animation:color 3s;
+    animation-delay:0s;
+    transition:all 2s;
 }
 .cr1 {
     width: 15px;
@@ -121,7 +124,11 @@ body {
     left: 384px;
     z-index: 4;
     border-radius: 50%;
+    animation:color 3s;
+    animation-delay:0s;
+    transition:all 2s;
 }
+
 .cr2{
 	width: 15px;
     height: 15px;
@@ -131,6 +138,24 @@ body {
     left: 349px;
     z-index: 4;
     border-radius: 50%;
+    animation:color 1s infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+   -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 4s ease-out;
+}
+@keyframes color{
+  0%{
+     background-color:linear-gradient(to bottom, #fccd64 0%, #bd8824 100%);
+   }
+  50%{
+     background-color:#df7673;
+  }
+  100%{
+     background-color:#f4c0c9;
+  }
 }
 .cur {
     width: 106px;
@@ -163,6 +188,12 @@ body {
     left: 473px;
     position: relative;
     z-index: 1;
+    transition-timing-function: 2s;
+    transition-duration: 2s;
+}
+.wbook:hover{
+  -webkit-transform: rotateY(360deg) rotateX(180deg); /* Safari */
+  transform: rotateY(360deg) rotateX(180deg); /* Standard syntax */
 }
 .wbook1{
 	width: 218px;
