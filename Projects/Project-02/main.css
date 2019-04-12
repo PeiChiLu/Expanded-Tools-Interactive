@@ -14,20 +14,18 @@ h1{
 }
 
 .triangle1{
-	width: 0;
-    height: 0;
+    width: 1800px;
+    height: 500px;
     z-index:-1;
     position:fixed;
     display:flex;
-    border-top: 500px solid magenta;
-    border-right: 500px solid transparent;
-    margin-top: 0px;
+    margin-top: 116px;
     -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
   -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
   -webkit-animation-direction: alternate-reverse; /* Safari 4.0 - 8.0 */
   animation-name: example;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;  
 }
@@ -137,7 +135,8 @@ h1{
     cursor: move;
     mix-blend-mode: darken;
     transition: cubic-bezier(0.88, 0.01, 1, 1), ease-out;
-    transition-duration: 2s;
+    transition-duration: 1s;
+    transition-delay:-0.1s;
 }
 #magenta:hover {
     -webkit-transform: scale(1.2);
