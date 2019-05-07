@@ -2,14 +2,152 @@
 
 <html>
     <head>
+      <title>Project 1 Patterns</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300|Stardos+Stencil" rel="stylesheet">
         <style>
-            img{
-            width:75%;
-            }
+        body {
+      font-family: 'Stardos Stencil', cursive;
+      line-height: 1.5em;
+      background-color: #ca4b30;  
+    }
+    .main {
+      width: 50%;
+      margin: 3em auto;
+      padding: 1em;
+      margin:100px 0px 0px 250px;
+     /*border:1px solid #ffffff;*/
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 3em;
+      line-height: 1.2em;
+      color:#ffffff;
+    }
+    h2{
+      font-size: 2em;
+      line-height: 1em;
+       color: #f4b739;
+    }
+
+
+    a {
+      font-family: 'Merriweather Sans', sans-serif;
+      font-weight: 1.5em;
+      color: #006671;
+      text-decoration: none;
+      transition:0.1s ease-in;
+    }
+
+    a:hover {
+      background: #f4b739;
+    }
+
+    ul {
+      padding-left: 18px;
+      list-style: none;
+    }
+
+    ul li {
+      color: #f4b739;
+    }
+    .circle {
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    position: fixed;
+    display: inline-flex;
+    margin: 636px 100px 0px -50px;
+    background-color: #646371;
+}
+.stripecontainer{
+    width: 1000px;
+    height: 1000px;
+    position: fixed;
+    margin:-221px -100px 1000px 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.stripe{
+  width: 20px;
+  height: 900px;
+  transform:rotate(140deg);
+  background-color: #f4b739;
+  margin:40px;
+}
+.trianglecontainer{
+      width: 900px;
+    height: 539px;
+    position: fixed;
+    margin: 472px 0px 0px 735px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    margin: -100px 15px 0px 13px;
+    border-bottom: 100px solid #daccc1;
+    border-left: 100px solid transparent;
+}
+.none{
+  visibility: hidden;
+}
+
+img{
+    width:75%;
+  }
         </style>
     </head>
 
     <body>
+      <div class="circle"></div>
+  <div class="stripecontainer">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+  </div>
+  <div class="trianglecontainer">
+    <div class="triangle none"></div>
+    <div class="triangle none"></div>
+    <div class="triangle none"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle none"></div>
+    <div class="triangle"></div>
+    <div class="triangle none"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle none"></div>
+    <div class="triangle none"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle none"></div>
+     <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+  </div>
+  <div class="main">
        <h1>Sketch 1</h1>
        <img src="3sketches/img1.png">
 
