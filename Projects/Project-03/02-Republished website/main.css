@@ -504,16 +504,16 @@ the following:
    height: 150px;
 }
 
-#headline{
-	margin-top: -72px;
-   margin:center;
+p{
+	/*margin-top: -72px;*/
+   /*margin:center;*/
     position: absolute;
     display: flex;
     font-family: 'Playfair Display', serif;
     font-size: 4em;
+    top: -50px;
+    left: 50px;
 }
-
-
 
 
 
