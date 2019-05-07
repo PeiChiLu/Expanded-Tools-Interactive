@@ -1,256 +1,519 @@
-
-@import url("https://fonts.googleapis.com/css?family=Schoolbell");
-:root {
-  --scenePerspective: 1;
-  --scenePerspectiveOriginX: 50;
-  --scenePerspectiveOriginY: 30;
-  --itemZ: 2;
-  --cameraSpeed: 150;
-  --cameraZ: 0;
-  --viewportHeight: 0;
+body{
+	background-color: #ffffff;
+}
+#wall{
+	position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(138deg, rgba(125,111,108,1) 0%, rgba(73,65,64,1) 100%);
+    width: 1660px;
+    height: 920px;
+    }
+#frame{
+	width: 1400px;
+    height: 776px;
+    background: rgb(121,121,121);
+    background: linear-gradient(140deg, rgba(121,121,121,1) 0%, rgba(41,41,41,1) 100%);
+    margin-top: 97px;
+    margin-left: 123px;
+    display: flex;
+    position: fixed;
+}
+.frameborder{
+	background: rgb(200,200,200);
+    background: linear-gradient(87deg, rgba(200,200,200,1) 0%, rgba(162,162,162,1) 100%);
+    width: 1394px;
+    height: 770px;
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 126px;
+    display: flex;
+}
+#frameb{
+	background: rgb(121,121,121);
+    background: linear-gradient(140deg, rgba(121,121,121,1) 0%, rgba(41,41,41,1) 100%);
+    width: 1322px;
+    height: 708px;
+    margin-left: 158px;
+    margin-top: 134px;
+    margin-right: 158px;
+    /* margin-bottom: 46px; */
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    perspective: 5000px;
+}
+.inside{
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 150px;
+    height: 31px;
+    border-top-width: 20px;
+    border-style: solid;
+    border-top-color: #545454d4;
+    border-right-width: 19px;
+    /* border-right-width: 11px; */
+    border-right-color: #6b6b6b;
+    border-left-width: 19px;
+    border-left-color: #656565;
+    border-bottom-color: #a0a0a0;
+    border-bottom-width: 20px;
+    perspective: 5000px;
 }
 
-.viewport {
-  height: calc(var(--viewportHeight) * 1px);
+.mailbox{
+	position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 134px;
+    margin-left: 158px;
+    margin-right: 191px;
+    margin-bottom: 46px;
+     perspective: 5000px;
 }
-.viewport .scene3D-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
-  perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
-  will-change: perspective-origin;
-  transform: translate3d(0, 0, 0);
+.boxframe{
+	width: 187px;
+    height: 69px;
+    background: rgb(200,200,200);
+    background: linear-gradient(140deg, rgba(200,200,200,1) 0%, rgba(145,145,145,1) 100%);
+    border: 1px solid #332d28;
+    cursor:pointer;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 5500px;
+    -webkit-transform-origin: 0 50%;
+    -webkit-transition: all 1s;
+    -moz-transform-style: preserve-3d;
+    -moz-perspective: 5500px;
+    -moz-transform-origin: 0 50%;
+    -moz-transition: all 1s;
+    -o-transform-style: preserve-3d;
+    -o-perspective: 5500px;
+    -o-transform-origin: 0 50%;
+    -o-transition: all 1s;
+    transform-style: preserve-3d;
+    perspective: 5500px;
+    transform-origin: 0 50%;
+    transition: all 1s ease-in-out;
 }
-.viewport .scene3D-container .scene3D {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  transform-style: preserve-3d;
-  transform: translateZ(calc(var(--cameraZ) * 1px));
-  will-change: transform;
+.boxframe:hover {
+    -webkit-transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
 }
-.viewport .scene3D-container .scene3D > div {
-  position: absolute;
-  display: block;
-  width: 100%;
-  top: 40%;
+ /*use scale to change how wide it opens
+    -moz-transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
+    -o-transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
+    transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
 }
-@media only screen and (min-width: 600px) {
-  .viewport .scene3D-container .scene3D > div {
-    width: 45%;
-  }
-}
-.viewport .scene3D-container .scene3D > div:nth-child(2n) {
-  left: 0;
-}
-.viewport .scene3D-container .scene3D > div:nth-child(2n + 1) {
-  right: 0;
-}
-.viewport .scene3D-container .scene3D > div:nth-child(0) {
-  transform: translate3D(-17%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(1) {
-  transform: translate3D(-4%, -32%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(2) {
-  transform: translate3D(-17%, -32%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(3) {
-  transform: translate3D(3%, 43%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(4) {
-  transform: translate3D(7%, -32%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(5) {
-  transform: translate3D(-18%, 36%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(6) {
-  transform: translate3D(3%, 42%, calc(var(--itemZ) * var(--cameraSpeed) * 6 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(7) {
-  transform: translate3D(-13%, -18%, calc(var(--itemZ) * var(--cameraSpeed) * 7 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(8) {
-  transform: translate3D(-24%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 8 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(9) {
-  transform: translate3D(13%, 44%, calc(var(--itemZ) * var(--cameraSpeed) * 9 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(10) {
-  transform: translate3D(-24%, 5%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(11) {
-  transform: translate3D(4%, -2%, calc(var(--itemZ) * var(--cameraSpeed) * 11 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(12) {
-  transform: translate3D(-14%, 12%, calc(var(--itemZ) * var(--cameraSpeed) * 12 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(13) {
-  transform: translate3D(0%, 39%, calc(var(--itemZ) * var(--cameraSpeed) * 13 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(14) {
-  transform: translate3D(-17%, 5%, calc(var(--itemZ) * var(--cameraSpeed) * 14 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(15) {
-  transform: translate3D(11%, -41%, calc(var(--itemZ) * var(--cameraSpeed) * 15 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(16) {
-  transform: translate3D(21%, -9%, calc(var(--itemZ) * var(--cameraSpeed) * 16 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(17) {
-  transform: translate3D(22%, -1%, calc(var(--itemZ) * var(--cameraSpeed) * 17 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(18) {
-  transform: translate3D(12%, 40%, calc(var(--itemZ) * var(--cameraSpeed) * 18 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(19) {
-  transform: translate3D(-16%, 15%, calc(var(--itemZ) * var(--cameraSpeed) * 19 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(20) {
-  transform: translate3D(19%, -13%, calc(var(--itemZ) * var(--cameraSpeed) * 20 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(21) {
-  transform: translate3D(18%, 47%, calc(var(--itemZ) * var(--cameraSpeed) * 21 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(22) {
-  transform: translate3D(8%, -27%, calc(var(--itemZ) * var(--cameraSpeed) * 22 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(23) {
-  transform: translate3D(17%, -37%, calc(var(--itemZ) * var(--cameraSpeed) * 23 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(24) {
-  transform: translate3D(14%, -29%, calc(var(--itemZ) * var(--cameraSpeed) * 24 * -1px));
-}
-.viewport .scene3D-container .scene3D > div:nth-child(25) {
-  transform: translate3D(-17%, 43%, calc(var(--itemZ) * var(--cameraSpeed) * 25 * -1px));
+   /*transform-style: preserve-3d;
+   transition: transform 2s;
+   transform-origin: right center; 
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+
+.boxframe:hover {
+  box-shadow: 0 20px 20px rgba(255,255,255,.2);
+  transform: rotateY( 180deg);
+  pointer-events: none;
+  
+}*/
+
+/*.boxframe .flipped {
+ transform: rotateY( 120deg);
+}
+    /*-webkit-transform-style: preserve-3d;
+    -webkit-perspective: 5500px;
+    -webkit-transform-origin: 0 50%;
+    -webkit-transition: all 1s;
+    -moz-transform-style: preserve-3d;
+    -moz-perspective: 5500px;
+    -moz-transform-origin: 0 50%;
+    -moz-transition: all 1s;
+    -o-transform-style: preserve-3d;
+    -o-perspective: 5500px;
+    -o-transform-origin: 0 50%;
+    -o-transition: all 1s;
+    transform-style: preserve-3d;
+    perspective: 5500px;
+    transform-origin: 0 50%;
+    transition: all 1s;
+}
+.boxframe:hover {
+    -webkit-transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg); /*use scale to change how wide it opens
+    -moz-transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
+    -o-transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
+    transform: scale(0.1,1) skew(0deg,10deg) rotate3d(0, 0.8, 0, -40deg);
+}
+*/
+.gray{
+	width: 165px;
+    height: 30px;
+    background: rgb(187,187,187);
+    background: linear-gradient(140deg, rgba(187,187,187,1) 0%, rgba(143,142,140,1) 100%);
+	border-top-color: #292826;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-right-color: black;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: black;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    margin-top: 10px;
+    margin-left: 9px;
+}
+.lift{
+	width: 163px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: -4px;
+    background-color: #959490;
+    background-color: #8f8e8c;
+	border-top-color: #616158;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-right-color: #292826;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: #292826;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-left-color: #292826;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+.shadow{
+	width: 163px;
+    height: 2px;
+    background-color: #6161584f;
+    margin-top: 6px;
+    margin-left: 0px;
+}
+.shadow1{
+	width: 163px;
+    height: 2px;
+    background: #c8c8c81c;
+    margin-top: -4px;
+    margin-left: 0px;
+    margin-left: 0px;
+}
+.key{
+	width: 11px;
+    height: 11px;
+    background-color: #5a4e42;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 14px;
+}
+.keybase{
+	    position: fixed;
+    margin-left: 19px;
+    margin-top: -15px;
+    transform: scale(0.6);
+    z-index: 0;
+}
+.pie {
+		position:absolute;
+		width:10px;
+		height:20px;
+		overflow:hidden;
+		-moz-transform-origin:left center;
+		-ms-transform-origin:left center;
+		-o-transform-origin:left center;
+		-webkit-transform-origin:left center;
+		transform-origin:left center;
+	}
+/*
+  unless the piece represents more than 50% of the whole chart.
+  then make it a square, and ensure the transform origin is
+  back in the center.
+
+  NOTE: since this is only ever a single piece, you could
+  move this to a piece specific rule and remove the extra class
+*/
+	.pie.big {
+		width:20px;
+		height:20px;
+		left:5px;
+		-moz-transform-origin:center center;
+		-ms-transform-origin:center center;
+		-o-transform-origin:center center;
+		-webkit-transform-origin:center center;
+		transform-origin:center center;
+	}
+/*
+  this is the actual visible part of the pie. 
+  Give it the same dimensions as the regular piece.
+  Use border radius make it a half circle.
+  move transform origin to the middle of the right side.
+  Push it out to the left of the containing box.
+*/
+	.pie:BEFORE {
+		content:"";
+		position:absolute;
+		width:10px;
+		height:20px;
+		left:-10px;
+		border-radius:10px 0 0 10px;
+		-moz-transform-origin:right center;
+		-ms-transform-origin:right center;
+		-o-transform-origin:right center;
+		-webkit-transform-origin:right center;
+		transform-origin:right center;
+		
+	}
+ /* if it's part of a big piece, bring it back into the square */
+	.pie.big:BEFORE {
+		left:0px;
+	}
+/* 
+  big pieces will also need a second semicircle, pointed in the
+  opposite direction to hide the first part behind.
+*/
+	.pie.big:AFTER {
+		content:"";
+		position:absolute;
+		width:10px;
+		height:20px;
+		left:10px;
+		border-radius:0 10px 10px 0;
+	}
+/*
+  add colour to each piece.
+*/
+	.pie:nth-of-type(1):BEFORE,
+	.pie:nth-of-type(1):AFTER {
+		background-color:#201b1c;	
+	}
+	.pie:nth-of-type(2):AFTER,
+	.pie:nth-of-type(2):BEFORE {
+		background-color:#201b1c;	
+	}
+	.pie:nth-of-type(3):AFTER,
+	.pie:nth-of-type(3):BEFORE {
+		background-color:#7d6e64;	
+	}
+	.pie:nth-of-type(4):AFTER,
+	.pie:nth-of-type(4):BEFORE {
+		background-color:#544c43;	
+	}
+/*
+  now rotate each piece based on their cumulative starting
+  position
+*/
+	.pie[data-start="30"] {
+		-moz-transform: rotate(30deg); /* Firefox */
+		-ms-transform: rotate(30deg); /* IE */
+		-webkit-transform: rotate(30deg); /* Safari and Chrome */
+		-o-transform: rotate(30deg); /* Opera */
+		transform:rotate(30deg);
+	}
+	.pie[data-start="60"] {
+		-moz-transform: rotate(60deg); /* Firefox */
+		-ms-transform: rotate(60deg); /* IE */
+		-webkit-transform: rotate(60deg); /* Safari and Chrome */
+		-o-transform: rotate(60deg); /* Opera */
+		transform:rotate(60deg);
+	}
+	.pie[data-start="100"] {
+		-moz-transform: rotate(100deg); /* Firefox */
+		-ms-transform: rotate(100deg); /* IE */
+		-webkit-transform: rotate(100deg); /* Safari and Chrome */
+		-o-transform: rotate(100deg); /* Opera */
+		transform:rotate(100deg);
+	}
+/*
+  and rotate the amount of the pie that's showing.
+
+  NOTE: add an extra degree to all but the final piece, 
+  to fill in unsightly gaps.
+*/
+	.pie[data-value="30"]:BEFORE {
+		-moz-transform: rotate(31deg); /* Firefox */
+		-ms-transform: rotate(31deg); /* IE */
+		-webkit-transform: rotate(31deg); /* Safari and Chrome */
+		-o-transform: rotate(31deg); /* Opera */
+		transform:rotate(31deg);
+	}
+	.pie[data-value="40"]:BEFORE {
+		-moz-transform: rotate(41deg); /* Firefox */
+		-ms-transform: rotate(41deg); /* IE */
+		-webkit-transform: rotate(41deg); /* Safari and Chrome */
+		-o-transform: rotate(41deg); /* Opera */
+		transform:rotate(41deg);
+	}
+	.pie[data-value="260"]:BEFORE {
+		-moz-transform: rotate(260deg); /* Firefox */
+		-ms-transform: rotate(260deg); /* IE */
+		-webkit-transform: rotate(260deg); /* Safari and Chrome */
+		-o-transform: rotate(260deg); /* Opera */
+		transform:rotate(260deg);
+	}
+/*
+NOTE: you could also apply custom classes (i.e. .s0 .v30)
+but if the CSS3 attr() function proposal ever gets implemented,
+then all the above custom piece rules could be replaced with
+the following:
+
+.pie[data-start] {
+   transform:rotate(attr(data-start,deg,0);
+}
+.pie[data-value]:BEFORE {
+   transform:rotate(attr(data-value,deg,0);
+}
+*/
+
+.keyup1{
+	position: fixed;
+    background-color: #b5a89b;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: -12px;
+    margin-left: 14px;
+}
+.keyup2{
+	position: fixed;
+    background: rgb(150,129,107);
+    background: linear-gradient(110deg, rgba(150,129,107,1) 0%, rgba(176,148,124,1) 48%, rgba(32,27,28,1) 100%);
+    z-index: 2;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-top: -11px;
+    margin-left: 16px;
+}
+.keyup3{
+	position: fixed;
+    background-color: #c7b99e;
+    z-index: 3;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: -10px;
+    margin-left: 16px;
+}
+.keyhole1{
+	position: fixed;
+    z-index: 4;
+    width: 4px;
+    height: 1px;
+    background-color: #4c4742;
+    margin-top: -7.65px;
+    margin-left: 17px;
+}
+.keyhole2{
+	    position: fixed;
+    z-index: 5;
+    width: 1px;
+    height: 1.7px;
+    background-color: #3e3c3a;
+    margin-top: -8px;
+    margin-left: 47px;
+    margin-left: 19px;
+}
+.keyhole3{
+	position: fixed;
+    z-index: 5;
+    width: 1px;
+    height: 1.5px;
+    background-color: #605851;
+    margin-top: -7px;
+    margin-left: 45px;
+    margin-left: 17.7px;
+}
+.name{
+	    width: 42px;
+    height: 9px;
+    z-index: 1;
+    margin-left: 128px;
+    margin-top: -12px;
+    background: rgb(255,255,255);
+    background: linear-gradient(140deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 44%, rgba(171,171,171,1) 100%);
+    border-right-color: #292826a6;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-left-color: #292826a6;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-top-color: #292826a6;
+    border-top-style: solid;
+    border-bottom-color: #a09e9aa3;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+.text1{
+	font-size: 7px;
+    font-family: 'Playfair Display', serif;
+}
+.board{
+	margin-top: -16px;
+    margin-left: 127px;
+    width: 46px;
+    height: 13px;
+    background-image: -webkit-radial-gradient( 50% 0%, 8% 50%, #00968800 0%, hsla(0,0%,100%,0) 100%), -webkit-radial-gradient( 0% 50%, 50% 7%, hsla(0,0%,100%,.5) 0%, hsla(0, 0%, 100%, 0.04) 100%), -webkit-radial-gradient( 50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%);
+    z-index: -1;
+    border-bottom: 100px solid linear-gradient(140deg, rgba(14,14,14,1) 0%, rgba(0,0,0,0.5396533613445378) 44%, rgba(0,0,0,0) 100%);
+}
+.tiltle{
+	margin-top: 100px;
+	margin-left:200px;
+	position: absolute;
+	display:block;
+	font-family: font-family: 'Playfair Display', serif;
+}
+.img{
+	    margin-top: 207px;
+    margin-left: 94px;
+    margin-right: 103px;
+    /* margin-bottom: 100px; */
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    perspective: 5012px;
+}
+.scale{
+    margin-top: -131px;
+    margin-left: 94px;
+    width: 100px;
+    height: 200px;
+    transform: scale(0.5)rotateX(65deg);
+    cursor:pointer;
+}
+.scale.zoom{
+   transform:none;
+    min-width: 250px;
+   height: 150px;
 }
 
-body {
-  background-color: #272935;
-  color: #272935;
-  padding: 0;
-  margin: 0;
+#headline{
+	margin-top: -72px;
+   margin:center;
+    position: absolute;
+    display: flex;
+    font-family: 'Playfair Display', serif;
+    font-size: 4em;
 }
 
-h1 {
-  font-family: "Playfair Display SC", serif;
-  font-size: 1.5rem;
-  color: white;
-  margin: 0;
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  text-align: center;
-}
-h1 .logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 150px;
-}
 
-.link {
-  color: white;
-  margin: 0;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1;
-}
 
-.scene3D > div {
-  padding: 2rem;
-}
-.scene3D > div h2 {
-  margin-top: 0;
-  font-family: "Playfair Display SC", serif;
-  font-size: 1.5rem;
-}
-.scene3D > div:nth-child(0) {
-  background-color: #ffc2e0;
-}
-.scene3D > div:nth-child(1) {
-  background-color: #ffc2c2;
-}
-.scene3D > div:nth-child(2) {
-  background-color: #ffe0c2;
-}
-.scene3D > div:nth-child(3) {
-  background-color: #ffffc2;
-}
-.scene3D > div:nth-child(4) {
-  background-color: #e0ffc2;
-}
-.scene3D > div:nth-child(5) {
-  background-color: #c2ffc2;
-}
-.scene3D > div:nth-child(6) {
-  background-color: #c2ffe0;
-}
-.scene3D > div:nth-child(7) {
-  background-color: #c2ffff;
-}
-.scene3D > div:nth-child(8) {
-  background-color: #c2e0ff;
-}
-.scene3D > div:nth-child(9) {
-  background-color: #c2c2ff;
-}
-.scene3D > div:nth-child(10) {
-  background-color: #e0c2ff;
-}
-.scene3D > div:nth-child(11) {
-  background-color: #ffc2ff;
-}
-.scene3D > div:nth-child(12) {
-  background-color: #ffc2e0;
-}
-.scene3D > div:nth-child(13) {
-  background-color: #ffc2c2;
-}
-.scene3D > div:nth-child(14) {
-  background-color: #ffe0c2;
-}
-.scene3D > div:nth-child(15) {
-  background-color: #ffffc2;
-}
-.scene3D > div:nth-child(16) {
-  background-color: #e0ffc2;
-}
-.scene3D > div:nth-child(17) {
-  background-color: #c2ffc2;
-}
-.scene3D > div:nth-child(18) {
-  background-color: #c2ffe0;
-}
-.scene3D > div:nth-child(19) {
-  background-color: #c2ffff;
-}
-.scene3D > div:nth-child(20) {
-  background-color: #c2e0ff;
-}
-.scene3D > div:nth-child(21) {
-  background-color: #c2c2ff;
-}
-.scene3D > div:nth-child(22) {
-  background-color: #e0c2ff;
-}
-.scene3D > div:nth-child(23) {
-  background-color: #ffc2ff;
-}
-.scene3D > div:nth-child(24) {
-  background-color: #ffc2e0;
-}
-.scene3D > div:nth-child(25) {
-  background-color: #ffc2c2;
-}
-Vie
+
+
